@@ -3,7 +3,15 @@ public with sharing class pdExpenseFromFreee {
     * 取引(支出)を取得する
      */
     @future(callout=true) 
-    public static void getExpenseInfo(Date baseDate,Integer months) {
+    public static void getExpenseInfo(Integer months) {
+        pdExpenseFromFreee.getExpenseInfoByBaseDate(null, months);
+    }
+
+    /**
+    * 取引(支出)を取得する(基準日指定)
+     */
+    @future(callout=true) 
+    public static void getExpenseInfoByBaseDate(Date baseDate,Integer months) {
         // 会社情報を取得する
         Integer companyId = getCompany();
 

@@ -4,6 +4,6 @@ private class pdExpenseFromFreee_test {
     static void getExpenseInfo_test() {
         Test.setMock(HttpCalloutMock.class, new pdExpenseFromFreeeCalloutMock());
 
-        pdExpenseFromFreee.getExpenseInfo(null, 6);
+        pdExpenseFromFreee.getExpenseInfo(6);
     }
 }
