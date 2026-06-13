@@ -3,14 +3,14 @@ public with sharing class pdExpenseFromFreee {
     * 取引(支出)を取得する
      */
     @future(callout=true) 
-    public static void getExpenseInfo(Integer months) {
+    public static void getExpenseInfo(Date baseDate,Integer months) {
         // 会社情報を取得する
         Integer companyId = getCompany();
 
         // 勘定科目情報を取得する
         Map<Integer, pdAccountInfo> mapAccountInfo = getAccountInfo(companyId);
 
-        Date startDate;
+        Date startDate = (baseDate == null) ? Date.today() : baseDate;
         List<Expense__c> lstExpense = new List<Expense__c>();
         List<Income__c> lstIncome = new List<Income__c>();
         List<Expense__c> lstExpenseDeleteAll = new List<Expense__c>();
