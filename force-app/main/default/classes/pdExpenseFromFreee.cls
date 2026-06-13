@@ -2,7 +2,6 @@ public with sharing class pdExpenseFromFreee {
     /**
     * 取引(支出)を取得する
      */
-    @future(callout=true) 
     public static void getExpenseInfo(Integer months) {
         pdExpenseFromFreee.getExpenseInfoByBaseDate(null, months);
     }

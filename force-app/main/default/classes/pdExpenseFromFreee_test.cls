@@ -5,5 +5,6 @@ private class pdExpenseFromFreee_test {
         Test.setMock(HttpCalloutMock.class, new pdExpenseFromFreeeCalloutMock());
 
         pdExpenseFromFreee.getExpenseInfo(6);
+        pdExpenseFromFreee.getExpenseInfoByBaseDate(Date.today(), 6);
     }
 }
