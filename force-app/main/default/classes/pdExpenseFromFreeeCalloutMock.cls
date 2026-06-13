@@ -9,7 +9,7 @@ global class pdExpenseFromFreeeCalloutMock implements HttpCalloutMock {
         }
         else if(endPoint.indexOf('callout:Freee/account_items') != (-1)) {
             res.setStatusCode(200);
-            String body = '{"account_items": [{"id": 1,"name": "支払手数料"}]}';
+            String body = '{"account_items": [{"id": 1,"name": "支払手数料", "account_category": "販売管理費"}]}';
             res.setBody(body);
         }
         else if(endPoint.indexOf('callout:Freee/deals') != (-1)) {
