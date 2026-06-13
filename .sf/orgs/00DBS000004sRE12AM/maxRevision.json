@@ -1,0 +1,192 @@
+{
+    "fileVersion": 0,
+    "serverMaxRevisionCounter": 3993,
+    "sourceMembers": {
+        "PermissionSet__sfdcInternalInt__sfdc_scrt2": {
+            "memberType": "PermissionSet",
+            "serverRevisionCounter": 4,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Pitadigi Admin": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 8,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Admin": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 3993,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Employee": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 9,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "RemoteSiteSetting__Sharepoint": {
+            "memberType": "RemoteSiteSetting",
+            "serverRevisionCounter": 11,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "FlexiPage__Account_Record_Page": {
+            "memberType": "FlexiPage",
+            "serverRevisionCounter": 60,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "FlexiPage__Opportunity_Record_Page1": {
+            "memberType": "FlexiPage",
+            "serverRevisionCounter": 118,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Flow__Opp_File_Upload": {
+            "memberType": "Flow",
+            "serverRevisionCounter": 206,
+            "lastRetrievedFromServer": 206,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__CopilotSalesforceUserPSG": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 211,
+            "lastRetrievedFromServer": 211,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__SalesWorkspacePSG": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 3971,
+            "lastRetrievedFromServer": 3971,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__SalesManagementUserPsg": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 3978,
+            "lastRetrievedFromServer": 3978,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__Manage_ASC_Analytics": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 3980,
+            "lastRetrievedFromServer": 3980,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__SalesManagementAgentUserPsg": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 3976,
+            "lastRetrievedFromServer": 3976,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__CopilotSalesforceAdminPSG": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 218,
+            "lastRetrievedFromServer": 218,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__AgentforceServiceAgentUserPsg": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 3974,
+            "lastRetrievedFromServer": 3974,
+            "isNameObsolete": false
+        },
+        "PermissionSet__sfdcInternalInt__sfdc_nc_constraints_engine_deploy": {
+            "memberType": "PermissionSet",
+            "serverRevisionCounter": 522,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "SiteDotCom__Customer_Support1": {
+            "memberType": "SiteDotCom",
+            "serverRevisionCounter": 3985,
+            "lastRetrievedFromServer": 3985,
+            "isNameObsolete": false
+        },
+        "SiteDotCom__Online_Profile_for_Salesforce1": {
+            "memberType": "SiteDotCom",
+            "serverRevisionCounter": 3988,
+            "lastRetrievedFromServer": 3988,
+            "isNameObsolete": false
+        },
+        "SiteDotCom__Partner_Support1": {
+            "memberType": "SiteDotCom",
+            "serverRevisionCounter": 3960,
+            "lastRetrievedFromServer": 3960,
+            "isNameObsolete": false
+        },
+        "SiteDotCom__Test1": {
+            "memberType": "SiteDotCom",
+            "serverRevisionCounter": 3984,
+            "lastRetrievedFromServer": 3984,
+            "isNameObsolete": false
+        },
+        "SiteDotCom__cs1": {
+            "memberType": "SiteDotCom",
+            "serverRevisionCounter": 3986,
+            "lastRetrievedFromServer": 3986,
+            "isNameObsolete": false
+        },
+        "SiteDotCom__Site1": {
+            "memberType": "SiteDotCom",
+            "serverRevisionCounter": 3983,
+            "lastRetrievedFromServer": 3983,
+            "isNameObsolete": false
+        },
+        "SiteDotCom__Site5": {
+            "memberType": "SiteDotCom",
+            "serverRevisionCounter": 3982,
+            "lastRetrievedFromServer": 3982,
+            "isNameObsolete": false
+        },
+        "SiteDotCom__Site3": {
+            "memberType": "SiteDotCom",
+            "serverRevisionCounter": 3987,
+            "lastRetrievedFromServer": 3987,
+            "isNameObsolete": false
+        },
+        "ExperienceBundle__X21": {
+            "memberType": "ExperienceBundle",
+            "serverRevisionCounter": 3981,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__GeneralUsers": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 2014,
+            "lastRetrievedFromServer": 2014,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__ServiceUsers": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 559,
+            "lastRetrievedFromServer": 559,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__SalesUsers": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 572,
+            "lastRetrievedFromServer": 572,
+            "isNameObsolete": false
+        },
+        "PermissionSetGroup__force__MarketingUsers": {
+            "memberType": "PermissionSetGroup",
+            "serverRevisionCounter": 2006,
+            "lastRetrievedFromServer": 2006,
+            "isNameObsolete": false
+        },
+        "Flow__Schedule_Create_Invoice": {
+            "memberType": "Flow",
+            "serverRevisionCounter": 1992,
+            "lastRetrievedFromServer": 1992,
+            "isNameObsolete": false
+        },
+        "Flow__Schedule_Create_Invoice_to_freee": {
+            "memberType": "Flow",
+            "serverRevisionCounter": 1993,
+            "lastRetrievedFromServer": 1993,
+            "isNameObsolete": false
+        }
+    }
+}

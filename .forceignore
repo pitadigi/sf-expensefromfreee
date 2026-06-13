@@ -22,3 +22,6 @@ package.xml
 **/permissionsets/**
 **/reportTypes/**
 **/settings/**
+**/flows/**
+**/siteDotComSites/**
+**/permissionsetgroups/**
