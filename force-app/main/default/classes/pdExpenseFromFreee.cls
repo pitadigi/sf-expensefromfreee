@@ -8,7 +8,7 @@ public with sharing class pdExpenseFromFreee {
         Integer companyId = getCompany();
 
         // 勘定科目情報を取得する
-        Map<Integer, String> mapAccountInfo = getAccountInfo(companyId);
+        Map<Integer, pdAccountInfo> mapAccountInfo = getAccountInfo(companyId);
 
         Date startDate;
         List<Expense__c> lstExpense = new List<Expense__c>();
@@ -75,7 +75,7 @@ public with sharing class pdExpenseFromFreee {
     /**
     * 勘定科目情報を取得する
      */
-    private static Map<Integer, String> getAccountInfo(Integer companyId) {
+    private static Map<Integer, pdAccountInfo> getAccountInfo(Integer companyId) {
         // 勘定科目情報を取得する
         Http http = new Http();
         String path = 'callout:Freee/account_items';
@@ -88,13 +88,16 @@ public with sharing class pdExpenseFromFreee {
         HttpResponse res = http.send(req);
 
         // 正常に返って来たらオブジェクトに設定する
-        Map<Integer, String> mapAccoutList = new Map<Integer, String>();
+        Map<Integer, pdAccountInfo> mapAccoutList = new Map<Integer, pdAccountInfo>();
         if (res.getStatusCode() == 200) {
             Map<String, Object> mapBody = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
             List<Object> lstBody = (List<Object>)mapBody.get('account_items');
             for(Object item : lstBody) {
                 Map<String, Object> mapItem = (Map<String, Object>)item;
-                mapAccoutList.put((Integer)mapItem.get('id'), (String)mapItem.get('name'));
+                pdAccountInfo accountInfo = new pdAccountInfo();
+                accountInfo.Name = (String)mapItem.get('name');
+                accountInfo.Category = (String)mapItem.get('account_category');
+                mapAccoutList.put((Integer)mapItem.get('id'), accountInfo);
             }
         }
         else {
@@ -107,7 +110,7 @@ public with sharing class pdExpenseFromFreee {
     /**
     * 経費明細を取得する
     */
-    private static List<Expense__c> getExpense(Integer companyId, Map<Integer, String> mapAccountInfo, Date startDate, Date endDate) {
+    private static List<Expense__c> getExpense(Integer companyId, Map<Integer, pdAccountInfo> mapAccountInfo, Date startDate, Date endDate) {
         List<Expense__c> lstExpense = new List<Expense__c>();
         List<Object> lstDeals = getDeals('expense', companyId, startDate, endDate);
         for(Object deal : lstDeals) {
@@ -126,6 +129,8 @@ public with sharing class pdExpenseFromFreee {
                 expense.IssueDate__c = Date.valueOf((String)mapDeal.get('issue_date'));
                 // 勘定科目
                 expense.AccountItem__c = getAccountName(mapAccountInfo, (Integer)mapDetail.get('account_item_id'));
+                // 勘定科目カテゴリ
+                expense.Category__c = getAccountCategory(mapAccountInfo, (Integer)mapDetail.get('account_item_id'));
                 // 金額
                 expense.Amount__c = (Long)mapDetail.get('amount');
                 // 備考
@@ -145,7 +150,7 @@ public with sharing class pdExpenseFromFreee {
     /**
     * 収入明細を取得する
     */
-    private static List<Income__c> getIncome(Integer companyId, Map<Integer, String> mapAccountInfo, Date startDate, Date endDate) {
+    private static List<Income__c> getIncome(Integer companyId, Map<Integer, pdAccountInfo> mapAccountInfo, Date startDate, Date endDate) {
         List<Income__c> lstIncome = new List<Income__c>();
         List<Object> lstDeals = getDeals('income', companyId, startDate, endDate);
         for(Object deal : lstDeals) {
@@ -164,6 +169,8 @@ public with sharing class pdExpenseFromFreee {
                 income.IssueDate__c = Date.valueOf((String)mapDeal.get('issue_date'));
                 // 勘定科目
                 income.AccountItem__c = getAccountName(mapAccountInfo, (Integer)mapDetail.get('account_item_id'));
+                // 勘定科目カテゴリ
+                income.Category__c = getAccountCategory(mapAccountInfo, (Integer)mapDetail.get('account_item_id'));
                 // 金額
                 income.Amount__c = (Long)mapDetail.get('amount');
                 // 備考
@@ -213,7 +220,7 @@ public with sharing class pdExpenseFromFreee {
      * 借方: 経費明細として追加する
      * 貸方: 収入明細として追加する
      */
-    private static void getManualJournals(Integer companyId, Map<Integer, String> mapAccountInfo, Date startDate, Date endDate, List<Income__c> lstIncome, List<Expense__c> lstExpense) {
+    private static void getManualJournals(Integer companyId, Map<Integer, pdAccountInfo> mapAccountInfo, Date startDate, Date endDate, List<Income__c> lstIncome, List<Expense__c> lstExpense) {
         Http http = new Http();
         String path = 'callout:Freee/manual_journals';
         String parameters = 'company_id=' + companyId;
@@ -246,6 +253,8 @@ public with sharing class pdExpenseFromFreee {
                         income.IssueDate__c = Date.valueOf((String)mapManualJournal.get('issue_date'));
                         // 勘定科目
                         income.AccountItem__c = getAccountName(mapAccountInfo, (Integer)mapDetail.get('account_item_id'));
+                        // 勘定科目カテゴリ
+                        income.Category__c = getAccountCategory(mapAccountInfo, (Integer)mapDetail.get('account_item_id'));
                         // 金額
                         income.Amount__c = (Long)mapDetail.get('amount');
                         // 備考
@@ -268,6 +277,8 @@ public with sharing class pdExpenseFromFreee {
                         expense.IssueDate__c = Date.valueOf((String)mapManualJournal.get('issue_date'));
                         // 勘定科目
                         expense.AccountItem__c = getAccountName(mapAccountInfo, (Integer)mapDetail.get('account_item_id'));
+                        // 勘定科目カテゴリ
+                        expense.Category__c = getAccountCategory(mapAccountInfo, (Integer)mapDetail.get('account_item_id'));
                         // 金額
                         expense.Amount__c = (Long)mapDetail.get('amount');
                         // 備考
@@ -287,8 +298,15 @@ public with sharing class pdExpenseFromFreee {
     /**
     * 勘定科目リストから指定IDの勘定科目名を返す
      */
-    private static String getAccountName(Map<Integer, String> mapAccountInfo, Integer Id) {
-        return mapAccountInfo.get(Id);
+    private static String getAccountName(Map<Integer, pdAccountInfo> mapAccountInfo, Integer Id) {
+        return mapAccountInfo.get(Id).Name;
+    }
+
+    /**
+    * 勘定科目リストから指定IDの勘定科目カテゴリを返す
+     */
+    private static String getAccountCategory(Map<Integer, pdAccountInfo> mapAccountInfo, Integer Id) {
+        return mapAccountInfo.get(Id).Category;
     }
 
     /**
@@ -314,8 +332,4 @@ public with sharing class pdExpenseFromFreee {
     public virtual class BaseException extends Exception {}
     public class OtherException extends BaseException {}
 
-    private class AccountInfo {
-        Integer Id;
-        String Name;
-    }
 }

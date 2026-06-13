@@ -1,6 +1,6 @@
 {
     "fileVersion": 0,
-    "serverMaxRevisionCounter": 3993,
+    "serverMaxRevisionCounter": 4090,
     "sourceMembers": {
         "PermissionSet__sfdcInternalInt__sfdc_scrt2": {
             "memberType": "PermissionSet",
@@ -10,19 +10,19 @@
         },
         "Profile__Pitadigi Admin": {
             "memberType": "Profile",
-            "serverRevisionCounter": 8,
+            "serverRevisionCounter": 4037,
             "lastRetrievedFromServer": null,
             "isNameObsolete": false
         },
         "Profile__Admin": {
             "memberType": "Profile",
-            "serverRevisionCounter": 3993,
+            "serverRevisionCounter": 4087,
             "lastRetrievedFromServer": null,
             "isNameObsolete": false
         },
         "Profile__Employee": {
             "memberType": "Profile",
-            "serverRevisionCounter": 9,
+            "serverRevisionCounter": 4035,
             "lastRetrievedFromServer": null,
             "isNameObsolete": false
         },
@@ -186,6 +186,138 @@
             "memberType": "Flow",
             "serverRevisionCounter": 1993,
             "lastRetrievedFromServer": 1993,
+            "isNameObsolete": false
+        },
+        "CustomField__Expense__c.Category__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 3994,
+            "lastRetrievedFromServer": 3994,
+            "isNameObsolete": false
+        },
+        "Layout__Expense__c-経費レイアウト": {
+            "memberType": "Layout",
+            "serverRevisionCounter": 3995,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__API": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 4032,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__API User": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 4033,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Customer User": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 4034,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Identity Admin User": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 4036,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Read Only": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 4038,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Salesforce API Only System Integrations": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 4039,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Slack連携": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 4040,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__SmartVisca連携": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 4041,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "Profile__Test": {
+            "memberType": "Profile",
+            "serverRevisionCounter": 4042,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ExternalCredential__ALMDevOpsCenterHub": {
+            "memberType": "ExternalCredential",
+            "serverRevisionCounter": 4012,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "NamedCredential__ALMDevOpsCenterHub": {
+            "memberType": "NamedCredential",
+            "serverRevisionCounter": 4090,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "PermissionSet__AccessDevOpsCenterNamedCredentials": {
+            "memberType": "PermissionSet",
+            "serverRevisionCounter": 4075,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "CustomField__Income__c.Category__c": {
+            "memberType": "CustomField",
+            "serverRevisionCounter": 4030,
+            "lastRetrievedFromServer": 4030,
+            "isNameObsolete": false
+        },
+        "Layout__Income__c-収入レイアウト": {
+            "memberType": "Layout",
+            "serverRevisionCounter": 4031,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ExternalCredential__ALMDevOpsGitHub": {
+            "memberType": "ExternalCredential",
+            "serverRevisionCounter": 4050,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "NamedCredential__ALMDevOpsGitHub": {
+            "memberType": "NamedCredential",
+            "serverRevisionCounter": 4056,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ExternalCredential__prod_1781319414546": {
+            "memberType": "ExternalCredential",
+            "serverRevisionCounter": 4066,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "NamedCredential__prod_1781319414546": {
+            "memberType": "NamedCredential",
+            "serverRevisionCounter": 4082,
+            "lastRetrievedFromServer": null,
+            "isNameObsolete": false
+        },
+        "ApexClass__pdAccountInfo": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 4086,
+            "lastRetrievedFromServer": 4086,
+            "isNameObsolete": false
+        },
+        "ApexClass__pdExpenseFromFreee": {
+            "memberType": "ApexClass",
+            "serverRevisionCounter": 4088,
+            "lastRetrievedFromServer": 4088,
             "isNameObsolete": false
         }
     }

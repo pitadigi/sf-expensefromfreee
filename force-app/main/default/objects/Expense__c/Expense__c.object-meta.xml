@@ -159,7 +159,7 @@
         <label>ID</label>
         <type>Text</type>
     </nameField>
-    <searchLayouts/>
+    <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
