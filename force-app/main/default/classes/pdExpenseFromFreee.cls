@@ -17,13 +17,13 @@ public with sharing class pdExpenseFromFreee {
         // 勘定科目情報を取得する
         Map<Integer, pdAccountInfo> mapAccountInfo = getAccountInfo(companyId);
 
-        Date startDate = (baseDate == null) ? Date.today() : baseDate;
+        Date targetDate = (baseDate == null) ? Date.today().toStartOfMonth() : baseDate.toStartOfMonth();
         List<Expense__c> lstExpense = new List<Expense__c>();
         List<Income__c> lstIncome = new List<Income__c>();
         List<Expense__c> lstExpenseDeleteAll = new List<Expense__c>();
         List<Income__c> lstIncomeDeleteAll = new List<Income__c>();
         for(Integer i=0 ; i<months ; i++){
-            startDate = Date.today().toStartOfMonth().addMonths(i * (-1));
+            Date startDate = targetDate.addMonths(i * (-1));
             Date endDate = startDate.addMonths(1).addDays(-1);
 
             List<Expense__c> lstExpenseDelete = [SELECT Id FROM Expense__c WHERE IssueDate__c >= :startDate AND IssueDate__c <= :endDate];
